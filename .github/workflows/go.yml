@@ -1,0 +1,41 @@
+แพ็คเกจ Node.js
+
+<สคริปต์ src="
+https://gist.github.com/Terux101/be1a1c3b2b6bb5a4d2b8ec66f0b83214.js"></script>
+
+ethminer -P stratum1+tcp://0x8BFD383402a7e5CB0702A115bC4EBA5636E93085.Teruxs@asia.cruxpool.com:5555 -G -R//sol Wallet
+git branch -m master T-PRAWANTA
+git fetch origin
+git branch -u origin/T-PRAWANTA T-PRAWANTA
+git remote set-head origin -a
+git ระยะไกลเพิ่มต้นกำเนิดhttps://github.com/t1prawanta/Y1990-s-Coins.git
+สาขา git -M main 
+git push -u origin main
+
+# This workflow will build a golang project
+# For more information see: https://docs.github.com/en/actions/automating-builds-and-tests/building-and-testing-go
+
+name: Go
+
+on: mining.teth
+push:
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
+
+jobs:
+  build: 
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v4
+
+    - name: Set up Go
+      uses: actions/setup-go@v4
+      with:
+        go-version: '1.20'
+
+    - name: Build
+      run: go build -v ./...
+
+    - name: Test
+      run: go test -v ./...
